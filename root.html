@@ -9,6 +9,9 @@
     .xtal-select-wrapper {
         display: inline-block;
         --hover-highlight-color: #00bfff; /* bright blue */
+        & select {
+            appearance: base-select;
+        }
     }
     .xtal-select-wrapper:hover {
         border-color:  var(--hover-highlight-color);
