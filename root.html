@@ -10,6 +10,7 @@
     .xtal-select-wrapper {
         display: inline-block;
         --hover-highlight-color: #00bfff; /* bright blue */
+        --transition-interval: 0.5s;
         & select {
             appearance: base-select;
         };
@@ -23,7 +24,7 @@
         }
         & label>span {
             opacity: 0;
-            transform: translateY(-10px); /* move up and fade out */
+            transform: translateY(-20px); /* move up and fade out */
         }
     }
     .xtal-select-wrapper:hover {
@@ -33,14 +34,14 @@
         & legend {
             opacity: 0;
             transform: translateY(10px); /* slightly lower */
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: opacity var(--transition-interval) ease, transform var(--transition-interval) ease;
             width: 0px;
             padding-inline: 0px;
         }
         & label>span {
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+            transition: opacity var(--transition-interval) ease, transform var(--transition-interval) ease, visibility 0s linear var(--transition-interval);
         }
     }
     
