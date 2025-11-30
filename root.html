@@ -11,6 +11,14 @@
         --hover-highlight-color: #00bfff; /* bright blue */
         & select {
             appearance: base-select;
+        };
+    }
+    .xtal-select-wrapper:has(select:focus){
+        & legend {
+            display: block;
+        }
+        & label>ruby-span {
+            display: none;
         }
     }
     .xtal-select-wrapper:hover {

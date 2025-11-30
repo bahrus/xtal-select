@@ -17,9 +17,12 @@
     </script>
 </head>
 <body>
-    <select 
+    <select id=select
         data-label=Country
         😶‍🌫️-src="xtal-select/root.html">
+        <button>
+            <selectedcontent></selectedcontent>
+        </button>
         <option value="">Select a country</option>
         <option value="us">United States</option>
         <option value="uk">United Kingdom</option>
@@ -29,5 +32,19 @@
         <option value="fr">France</option>
         <option value="jp">Japan</option>
     </select>
+    <script>
+        // select.addEventListener('focus', e => {
+        //     setTimeout(() => {
+        //         console.log('iah');
+        //         const event = new MouseEvent('mousedown', {
+        //             bubbles: true,
+        //             cancelable: true,
+        //             view: window
+        //         });
+        //         select.dispatchEvent(event);
+        //     }, 100);
+
+        // });
+    </script>
 </body>
 </html>
