@@ -20,7 +20,10 @@
     "safari": "npx playwright wk http://localhost:8000",
     "update": "ncu -u && npm install"
   },
-    "devDependencies": {
+  "dependencies": {
+    "em-bower": "0.0.3"
+  },
+  "devDependencies": {
     "@playwright/test": "1.57.0",
     "spa-ssi": "0.0.25"
   }
