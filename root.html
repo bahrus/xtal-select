@@ -26,6 +26,7 @@
         & label>span {
             opacity: 0;
             transform: translateY(-var(--translate-length)); /* move up and fade out */
+            width: 0px;
         }
     }
     .xtal-select-wrapper:hover {
@@ -42,6 +43,7 @@
         & label>span {
             opacity: 1;
             visibility: visible;
+            width: auto;
             transition: opacity var(--transition-interval) ease, transform var(--transition-interval) ease, visibility 0s linear var(--transition-interval);
         }
     }
