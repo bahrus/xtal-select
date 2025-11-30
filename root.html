@@ -7,8 +7,6 @@
 </fieldset>
 <style>
 
-
-
     .xtal-select-wrapper {
         display: inline-block;
         --hover-highlight-color: #00bfff; /* bright blue */
@@ -18,17 +16,28 @@
     }
     .xtal-select-wrapper:has(select:focus){
         & legend {
-            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
         & label>span {
-            display: none;
+            opacity: 0;
+            transform: translateY(-10px); /* move up and fade out */
         }
     }
     .xtal-select-wrapper:hover {
         border-color:  var(--hover-highlight-color);
     }
-    .xtal-select-wrapper legend {
-        display: none;
+    .xtal-select-wrapper {
+        & legend {
+            opacity: 0;
+            transform: translateY(10px); /* slightly lower */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        & label>span {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+        }
     }
     
 </style>
