@@ -2,7 +2,9 @@
     <legend aria-label={{dataset.label}}>{{dataset.label}}</legend>
     <label>
         <span>{{dataset.label}}</span>
-        <slot></slot>
+        <slot>
+            <select></select>
+        </slot>
     </label>
 </fieldset>
 <style>
@@ -12,9 +14,19 @@
         --hover-highlight-color: #00bfff; /* bright blue */
         --transition-interval: 0.5s;
         --translate-length: 20px;
+        --outer-width: 400px;
         & select {
             appearance: base-select;
-        };
+            flex: 1;
+            min-width: 0; /* allows flex item to shrink below content size */
+        }
+        width: var(--outer-width);
+
+        & label {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
     }
     .xtal-select-wrapper:has(select:focus){
         & legend {
@@ -26,7 +38,7 @@
         & label>span {
             opacity: 0;
             transform: translateY(-var(--translate-length)); /* move up and fade out */
-            width: 0px;
+            max-width: 0px;
         }
     }
     .xtal-select-wrapper:hover {
@@ -43,8 +55,15 @@
         & label>span {
             opacity: 1;
             visibility: visible;
-            width: auto;
-            transition: opacity var(--transition-interval) ease, transform var(--transition-interval) ease, visibility 0s linear var(--transition-interval);
+            display:inline-block;
+            max-width: 200px;
+            transition: 
+                opacity var(--transition-interval) ease, 
+                transform var(--transition-interval) ease, 
+                visibility 0s linear var(--transition-interval),
+                max-width var(--transition-interval) ease
+            ;
+                
         }
     }
     
