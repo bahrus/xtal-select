@@ -31,8 +31,10 @@
         width: var(--outer-width);
         box-sizing: var(--box-sizing);
         font-family: var(--font-family);
-        select {
+        select, ::picker(select){
             appearance: base-select;
+        }
+        select {
             flex: var(--select-flex);
             min-width: 0; /* allows flex item to shrink below content size */
             padding: var(--select-padding);
@@ -80,7 +82,7 @@
                 content: "☑️";
             }
             selectedcontent {
-                & .icon{
+                .icon{
                     display: none;
                 }
             }
@@ -128,14 +130,14 @@
         border-color:  var(--hover-highlight-color);
     }
     .xtal-select-wrapper {
-        & legend {
+        legend {
             opacity: 0;
             transform: translateY(var(--translate-length)); /* slightly lower */
             transition: opacity var(--transition-interval) ease, transform var(--transition-interval) ease;
             width: 0px;
             padding-inline: 0px;
         }
-        & label>span {
+        label>span {
             opacity: 1;
             visibility: visible;
             display:inline-block;
