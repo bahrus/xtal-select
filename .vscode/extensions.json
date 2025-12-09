@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "andersonbruceb.custom-link-attributes",
-        "andersonbruceb.idref"
+        "andersonbruceb.idref",
+        "andersonbruceb.json-in-html"
     ]
 }
