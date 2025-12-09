@@ -28,7 +28,10 @@
         --select-pi-color: #999999;
         --select-pi-tansition: 0.4s rotate;
         --select-opi-rotate: 180deg;
-        & select {
+        width: var(--outer-width);
+        box-sizing: var(--box-sizing);
+        font-family: var(--font-family);
+        select {
             appearance: base-select;
             flex: var(--select-flex);
             min-width: 0; /* allows flex item to shrink below content size */
@@ -36,7 +39,7 @@
             border: var(--select-border); 
             background: var(--select-background);
             transition: border-color var(--select-transition);
-            & option {
+            option {
                 display: flex;
                 justify-content: flex-start;
                 gap: 20px;
@@ -45,47 +48,60 @@
                 background: #eeeeee;
                 padding: 10px;
                 transition: 0.4s;
-                & .icon {
+                .icon {
                     font-size: 1.6rem;
                     text-box: trim-both cap alphabetic;
                 }
             }
-            & option:first-of-type {
+            option:first-of-type {
                 border-radius: 8px 8px 0 0;
             }
 
-            & option:last-of-type {
+            option:last-of-type {
                 border-radius: 0 0 8px 8px;
             }
 
-            & option:not(option:last-of-type) {
+            option:not(option:last-of-type) {
                 border-bottom: none;
             }
-            & option:nth-of-type(odd) {
+            option:nth-of-type(odd) {
                 background: white;
             }
-            & option:hover,
+            option:hover,
               option:focus {
                 background: plum;
             }
-            & selectedcontent {
+            option:checked{
+                font-weight: bold;
+            }
+            option::checkmark {
+                order: 1;
+                margin-left: auto;
+                content: "☑️";
+            }
+            selectedcontent {
                 & .icon{
                     display: none;
                 }
             }
         }
-        & select:hover, select:focus {
+        select:hover, select:focus {
             background: var(--select-hf-background);
             
         }
-        & ::picker(select){
+        ::picker(select){
             border: none;
             border-radius: 8px;
+            opacity: 0;
+            transition: all 0.4s allow-discrete;
+            top: calc(anchor(bottom) + 1px);
+            left: anchor(10%);
         }
-        width: var(--outer-width);
-        box-sizing: var(--box-sizing);
-        font-family: var(--font-family);
-        & label {
+        ::picker(select):popover-open {
+            opacity: 1;
+        }
+
+        label {
             display: flex;
             align-items: center;
             width: 100%;
