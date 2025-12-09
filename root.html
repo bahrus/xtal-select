@@ -16,14 +16,34 @@
         --translate-length: 20px;
         --outer-width: 400px;
         --gap-after-label: 3px;
-        --legend-padding: 2px; 
+        --legend-padding: 2px;
+        --box-sizing: border-box;
+        --font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+        --select-flex: 1;
+        --select-border: 2px solid #dddddd;
+        --select-background: #eeeeee;
+        --select-padding: 10px;
+        --select-transition: 0.4s;
+        --select-hf-background: #dddddd;
+        --select-pi-color: #999999;
+        --select-pi-tansition: 0.4s rotate;
+        --select-opi-rotate: 180deg;
         & select {
             appearance: base-select;
-            flex: 1;
+            flex: var(--select-flex);
             min-width: 0; /* allows flex item to shrink below content size */
+            padding: var(--select-padding);
+            border: var(--select-border); 
+            background: var(--select-background);
+            transition: border-color var(--select-transition);
+        }
+        & select:hover, select:focus {
+            background: var(--select-hf-background);
+            
         }
         width: var(--outer-width);
-
+        box-sizing: var(--box-sizing);
+        font-family: var(--font-family);
         & label {
             display: flex;
             align-items: center;
