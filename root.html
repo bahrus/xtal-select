@@ -1,7 +1,7 @@
-<fieldset class=xtal-select-wrapper part=xtal-select-wrapper>
-    <legend aria-label={{dataset.label}}>{{dataset.label}}</legend>
-    <label>
-        <span>{{dataset.label}}</span>
+<fieldset part=xtal-select-fieldset class=xtal-select-wrapper part=xtal-select-wrapper>
+    <legend part=xtal-select-legend aria-label={{dataset.label}}>{{dataset.label}}</legend>
+    <label part=xtal-select-label>
+        <span part=xtal-select-label-span>{{dataset.label}}</span>
         <slot>
             <select></select>
         </slot>
@@ -36,10 +36,51 @@
             border: var(--select-border); 
             background: var(--select-background);
             transition: border-color var(--select-transition);
+            & option {
+                display: flex;
+                justify-content: flex-start;
+                gap: 20px;
+
+                border: 2px solid #dddddd;
+                background: #eeeeee;
+                padding: 10px;
+                transition: 0.4s;
+                & .icon {
+                    font-size: 1.6rem;
+                    text-box: trim-both cap alphabetic;
+                }
+            }
+            & option:first-of-type {
+                border-radius: 8px 8px 0 0;
+            }
+
+            & option:last-of-type {
+                border-radius: 0 0 8px 8px;
+            }
+
+            & option:not(option:last-of-type) {
+                border-bottom: none;
+            }
+            & option:nth-of-type(odd) {
+                background: white;
+            }
+            & option:hover,
+              option:focus {
+                background: plum;
+            }
+            & selectedcontent {
+                & .icon{
+                    display: none;
+                }
+            }
         }
         & select:hover, select:focus {
             background: var(--select-hf-background);
             
+        }
+        & ::picker(select){
+            border: none;
+            border-radius: 8px;
         }
         width: var(--outer-width);
         box-sizing: var(--box-sizing);
