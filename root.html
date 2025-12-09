@@ -15,7 +15,8 @@
         --transition-interval: 0.5s;
         --translate-length: 20px;
         --outer-width: 400px;
-        --gap-after-label: 3px; 
+        --gap-after-label: 3px;
+        --legend-padding: 2px; 
         & select {
             appearance: base-select;
             flex: 1;
@@ -38,7 +39,7 @@
             opacity: 1;
             transform: translateY(0);
             width: auto;
-            padding-inline: auto;
+            padding-inline: var(--legend-padding);
         }
         & label>span {
             opacity: 0;
