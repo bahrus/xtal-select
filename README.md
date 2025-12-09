@@ -3,3 +3,35 @@
 *xtal-select* provides an html decking layer that can surround the select element.
 
 It makes the select element [customizable](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select), and adds some styling to make the entire decked select have a material UI look and feel.
+
+## Sample markup
+
+```html
+<script type=importmap >
+{
+    "imports": {
+        "xtal-select/": "node_modules/xtal-select/"
+    }
+}
+</script>
+<script type=module>
+    import 'be-decked-with/😶‍🌫️.js';
+</script>
+
+<select id=select
+    data-label=Country
+    😶‍🌫️-src="xtal-select/root.html">
+    <button>
+        <selectedcontent></selectedcontent>
+    </button>
+    <option value="">Select a country</option>
+    <option value="us">United States</option>
+    <option value="uk">United Kingdom</option>
+    <option value="ca">Canada</option>
+    <option value="au">Australia</option>
+    <option value="de">Germany</option>
+    <option value="fr">France</option>
+    <option value="jp">Japan</option>
+</select>
+
+```
