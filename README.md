@@ -35,3 +35,10 @@ It makes the select element [customizable](https://developer.mozilla.org/en-US/d
 </select>
 
 ```
+
+## Recommended vscode extensions:
+
+[json-in-html, custom link attributes, idref](https://marketplace.visualstudio.com/publishers/andersonbruceb)
+
+
+
